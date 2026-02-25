@@ -26,6 +26,17 @@ const projects = [
   },
   {
     number: "03",
+    name: "DominionDesk Core",
+    tagline: "Personal Finance & Budgeting Tracker",
+    description:
+      "A personal finance tracker built to help individuals take control of their money. Features budget planning, expense categorisation, income tracking, and visual spending insights. Designed around real-world budgeting workflows with a clean, fast interface powered by Next.js.",
+    stack: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
+    status: "Personal Project",
+    highlight: false,
+    links: { live: "https://core.dominiondesk.com/" },
+  },
+  {
+    number: "04",
     name: "Hello Doctor",
     tagline: "Healthcare Management System",
     description:
@@ -36,7 +47,7 @@ const projects = [
     links: { github: "https://github.com/comfie" },
   },
   {
-    number: "04",
+    number: "05",
     name: "Water Quality Analysis (SANSA)",
     tagline: "GIS-Based Environmental Data Platform",
     description:
@@ -47,7 +58,7 @@ const projects = [
     links: {},
   },
   {
-    number: "05",
+    number: "06",
     name: "iRainbow Education Platform",
     tagline: "Offline Learning for Grades 0–7",
     description:
@@ -58,7 +69,7 @@ const projects = [
     links: {},
   },
   {
-    number: "06",
+    number: "07",
     name: "TRX BOM Upload Client",
     tagline: "Enterprise Bill of Materials Processing",
     description:
