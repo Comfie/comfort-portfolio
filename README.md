@@ -97,7 +97,7 @@ All content is hardcoded in the section files for simplicity. To update:
 
 ## 📦 Next Steps / Optional Enhancements
 
-- [ ] Add a downloadable PDF CV link (upload to `/public/Comfort_Nyatsine_CV.pdf`)
+- [x] Add a downloadable PDF CV link (`/public/Comfort_Nyatsine_CV.pdf`) — Download CV button added to Hero CTA
 - [ ] Add project screenshots/mockups to the project cards
 - [ ] Connect the contact form to Resend or Formspree
 - [ ] Set up Google Analytics or Plausible

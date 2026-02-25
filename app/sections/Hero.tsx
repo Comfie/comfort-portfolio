@@ -189,6 +189,15 @@ export default function Hero() {
           >
             GitHub
           </a>
+          <a
+            href="/Comfort_Nyatsine_CV.pdf"
+            download
+            className="group flex items-center gap-3 border border-accent text-accent px-7 py-4 font-display text-sm tracking-wide hover:bg-accent hover:text-bg transition-all duration-300"
+            style={{ fontFamily: "Syne, sans-serif", fontWeight: 500 }}
+          >
+            Download CV
+            <span className="group-hover:translate-y-0.5 transition-transform duration-200">↓</span>
+          </a>
         </div>
 
         {/* Stats row */}
