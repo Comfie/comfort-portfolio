@@ -172,7 +172,7 @@ export default function Hero() {
             <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
           </a>
           <a
-            href="https://linkedin.com/in/comfortnyatsine"
+            href="https://www.linkedin.com/in/comfort-nyatsine/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 border border-border text-text px-7 py-4 font-display text-sm tracking-wide hover:border-accent hover:text-accent transition-all duration-300"

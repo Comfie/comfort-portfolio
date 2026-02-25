@@ -78,8 +78,8 @@ export default function Contact() {
               },
               {
                 label: "LinkedIn",
-                value: "linkedin.com/in/comfortnyatsine",
-                href: "https://linkedin.com/in/comfortnyatsine",
+                value: "linkedin.com/in/comfort-nyatsine",
+                href: "https://www.linkedin.com/in/comfort-nyatsine/",
               },
               {
                 label: "GitHub",
