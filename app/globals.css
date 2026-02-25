@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-syne: 'Syne', sans-serif;
+  --font-dm-sans: 'DM Sans', sans-serif;
+  --font-jetbrains: 'JetBrains Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: #080808;
+  color: #F2EDE4;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Custom cursor */
+.cursor {
+  width: 10px;
+  height: 10px;
+  background: #FF6B35;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+  mix-blend-mode: difference;
+}
+
+.cursor-follower {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #FF6B3566;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition: all 0.15s ease;
+}
+
+/* Selection */
+::selection {
+  background: #FF6B35;
+  color: #080808;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+::-webkit-scrollbar-thumb {
+  background: #FF6B35;
+  border-radius: 2px;
+}
+
+/* Noise texture overlay */
+.noise::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 100;
+  animation: grain 8s steps(10) infinite;
+}
+
+/* Gradient orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* Section fade-in on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.stagger.visible > *:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
+.stagger.visible > *:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+.stagger.visible > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
+.stagger.visible > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
+.stagger.visible > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+.stagger.visible > *:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.6s; }
+.stagger.visible > *:nth-child(7) { opacity: 1; transform: translateY(0); transition-delay: 0.7s; }
+.stagger.visible > *:nth-child(8) { opacity: 1; transform: translateY(0); transition-delay: 0.8s; }
+
+/* Accent underline animation */
+.hover-line {
+  position: relative;
+  display: inline-block;
+}
+.hover-line::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #FF6B35;
+  transition: width 0.3s ease;
+}
+.hover-line:hover::after {
+  width: 100%;
+}
+
+/* Marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-inner {
+  animation: marquee 25s linear infinite;
+  display: flex;
+  width: max-content;
+}
+.marquee-inner:hover {
+  animation-play-state: paused;
+}
