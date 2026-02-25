@@ -37,6 +37,17 @@ const projects = [
   },
   {
     number: "04",
+    name: "Jadde Apartments",
+    tagline: "Self-Catering Accommodation Booking Platform",
+    description:
+      "A modern property listing and booking website for an exclusive self-catering complex in Chartwell, Fourways. Features apartment showcase pages with pricing, detailed unit descriptions, location mapping, and a contact/enquiry flow. Built with Next.js for fast SSR performance and deployed on Vercel.",
+    stack: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+    status: "Live",
+    highlight: false,
+    links: { live: "https://jadde-apartments.vercel.app/" },
+  },
+  {
+    number: "05",
     name: "Hello Doctor",
     tagline: "Healthcare Management System",
     description:
@@ -47,7 +58,7 @@ const projects = [
     links: { github: "https://github.com/comfie" },
   },
   {
-    number: "05",
+    number: "06",
     name: "Water Quality Analysis (SANSA)",
     tagline: "GIS-Based Environmental Data Platform",
     description:
@@ -58,7 +69,7 @@ const projects = [
     links: {},
   },
   {
-    number: "06",
+    number: "07",
     name: "iRainbow Education Platform",
     tagline: "Offline Learning for Grades 0–7",
     description:
@@ -69,7 +80,7 @@ const projects = [
     links: {},
   },
   {
-    number: "07",
+    number: "08",
     name: "TRX BOM Upload Client",
     tagline: "Enterprise Bill of Materials Processing",
     description:
@@ -205,7 +216,7 @@ export default function Projects() {
                   >
                     {project.status}
                   </span>
-                  {project.links.live && (
+                  {project.links.live && project.status !== "Live" && (
                     <span className="font-mono text-xs px-2 py-0.5 border text-green-400 border-green-400/30 bg-green-400/5" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
                       Live
                     </span>
