@@ -15,14 +15,14 @@ const projects = [
   },
   {
     number: "02",
-    name: "TRX BOM Upload Client",
-    tagline: "Enterprise Bill of Materials Processing",
+    name: "DominionDesk",
+    tagline: "Property Management CRM",
     description:
-      "Built for procurement teams at Luna Software Solutions. Users upload CSV/Excel BOM files, the system queries the Mouser API for real-time product pricing and availability, calculates markups, generates PDF quotes, and dispatches them via email. Features real-time progress tracking via SignalR, JWT authentication, and an admin dashboard.",
-    stack: [".NET 9", "SignalR", "JWT", "Mouser API", "SQL Server", "Angular"],
-    status: "Live",
-    highlight: false,
-    links: {},
+      "A comprehensive CRM for property managers, streamlining tenant tracking, lease administration, and property oversight. Built with Next.js for SSR performance. Designed from personal experience with SA property market pain points around dual rental/Airbnb management and calendar sync.",
+    stack: ["Next.js", "React", "PostgreSQL", "Tailwind CSS"],
+    status: "Personal Project",
+    highlight: true,
+    links: { github: "https://github.com/comfie", live: "https://dominiondesk.vercel.app" },
   },
   {
     number: "03",
@@ -37,17 +37,6 @@ const projects = [
   },
   {
     number: "04",
-    name: "DominionDesk",
-    tagline: "Property Management CRM",
-    description:
-      "A comprehensive CRM for property managers, streamlining tenant tracking, lease administration, and property oversight. Built with Next.js for SSR performance. Designed from personal experience with SA property market pain points around dual rental/Airbnb management and calendar sync.",
-    stack: ["Next.js", "React", "PostgreSQL", "Tailwind CSS"],
-    status: "Personal Project",
-    highlight: false,
-    links: { github: "https://github.com/comfie" },
-  },
-  {
-    number: "05",
     name: "Water Quality Analysis (SANSA)",
     tagline: "GIS-Based Environmental Data Platform",
     description:
@@ -58,7 +47,7 @@ const projects = [
     links: {},
   },
   {
-    number: "06",
+    number: "05",
     name: "iRainbow Education Platform",
     tagline: "Offline Learning for Grades 0–7",
     description:
@@ -68,7 +57,19 @@ const projects = [
     highlight: false,
     links: {},
   },
+  {
+    number: "06",
+    name: "TRX BOM Upload Client",
+    tagline: "Enterprise Bill of Materials Processing",
+    description:
+      "Built for procurement teams at Luna Software Solutions. Users upload CSV/Excel BOM files, the system queries the Mouser API for real-time product pricing and availability, calculates markups, generates PDF quotes, and dispatches them via email. Features real-time progress tracking via SignalR, JWT authentication, and an admin dashboard.",
+    stack: [".NET 9", "SignalR", "JWT", "Mouser API", "SQL Server", "Angular"],
+    status: "Live",
+    highlight: false,
+    links: {},
+  },
 ];
+
 
 const statusColor: Record<string, string> = {
   Live: "text-green-400 border-green-400/30 bg-green-400/5",
@@ -181,12 +182,24 @@ export default function Projects() {
                 <span className="font-mono text-xs text-muted/40" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
                   {project.number}
                 </span>
-                <span
-                  className={`font-mono text-xs px-2 py-0.5 border ${statusColor[project.status]}`}
-                  style={{ fontFamily: 'JetBrains Mono, monospace' }}
-                >
-                  {project.status}
-                </span>
+                <div className="flex items-center gap-2">
+                  {project.highlight && (
+                    <span className="font-mono text-xs text-accent/30 border border-accent/20 px-2 py-0.5" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
+                      ★ Featured
+                    </span>
+                  )}
+                  <span
+                    className={`font-mono text-xs px-2 py-0.5 border ${statusColor[project.status]}`}
+                    style={{ fontFamily: 'JetBrains Mono, monospace' }}
+                  >
+                    {project.status}
+                  </span>
+                  {project.links.live && (
+                    <span className="font-mono text-xs px-2 py-0.5 border text-green-400 border-green-400/30 bg-green-400/5" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
+                      Live
+                    </span>
+                  )}
+                </div>
               </div>
 
               <h3
@@ -200,7 +213,7 @@ export default function Projects() {
                 {project.description}
               </p>
 
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex flex-wrap gap-1.5 mb-4">
                 {project.stack.slice(0, 4).map((s) => (
                   <span
                     key={s}
@@ -216,6 +229,17 @@ export default function Projects() {
                   </span>
                 )}
               </div>
+              {project.links.live && (
+                <a
+                  href={project.links.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-mono text-xs text-green-400 hover:text-green-300 transition-colors"
+                  style={{ fontFamily: 'JetBrains Mono, monospace' }}
+                >
+                  ↗ View Live
+                </a>
+              )}
             </div>
           ))}
         </div>
