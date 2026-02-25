@@ -22,7 +22,7 @@ const projects = [
     stack: ["Next.js", "React", "PostgreSQL", "Tailwind CSS"],
     status: "Personal Project",
     highlight: true,
-    links: { github: "https://github.com/comfie", live: "https://dominiondesk.vercel.app" },
+    links: { github: "https://github.com/comfie", live: "https://dominiondesk.com/" },
   },
   {
     number: "03",
