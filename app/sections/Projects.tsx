@@ -176,7 +176,7 @@ export default function Projects() {
               onMouseLeave={() => setHovered(null)}
               data-hover
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
               <div className="flex items-center justify-between mb-4">
                 <span className="font-mono text-xs text-muted/40" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
